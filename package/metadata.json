@@ -1,0 +1,10 @@
+{
+    "KPlugin": {
+        "Id": "com.github.aurus28",
+        "Name": "Wallpaper Switcher",
+        "Description": "Minimal Plasma 6 wallpaper switcher",
+        "Icon": "preferences-desktop"
+    },
+    "KPackageStructure": "Plasma/Applet",
+    "X-Plasma-API-Minimum-Version": "6.0"
+}
