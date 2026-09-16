@@ -31,6 +31,10 @@
             <default>200</default>
         </entry>
 
+        <entry name="hideUnlessEditMode" type="Bool">
+            <default>true</default>
+        </entry>
+
     </group>
 
 </kcfg>
