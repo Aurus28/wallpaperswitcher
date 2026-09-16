@@ -30,10 +30,12 @@ PlasmoidItem {
         Layout.preferredHeight: 400
         Layout.preferredWidth: 600
 
-Component.onCompleted: {
-    console.log("configured folder:", plasmoid.configuration.folderPath)
-    console.log("effective folder:", wallpaperFolder)
-}
+
+        // debug
+        Component.onCompleted: {
+            console.log("configured folder:", plasmoid.configuration.folderPath)
+            console.log("effective folder:", wallpaperFolder)
+        }
 
 
         GridView {

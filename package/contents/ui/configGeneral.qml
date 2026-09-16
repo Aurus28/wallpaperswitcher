@@ -48,7 +48,7 @@ ColumnLayout {
         }
     }
 
-    // Popup width
+    // Aspect Ratio
     RowLayout {
         Layout.fillWidth: true
         Layout.alignment: Qt.AlignTop
@@ -57,27 +57,125 @@ ColumnLayout {
         Layout.rightMargin: 10
 
         Controls.Label {
-            text: i18n("Popup width:")
+            text: i18n("Aspect Ratio:")
 
             Layout.alignment: Qt.AlignLeft
             //Layout.fillWidth: true
         }
 
         Controls.SpinBox {
-            from: 100
+            from: 1
             to: 2000
-            value: plasmoid.configuration.popupWidth
+            value: plasmoid.configuration.aspectX
 
             onValueChanged: {
-                plasmoid.configuration.popupWidth = value
+                plasmoid.configuration.aspectX = value
+            }
+        }
+
+        Controls.Label {
+            text: i18n(":")
+        }
+
+        Controls.SpinBox {
+            from: 1
+            to: 2000
+            value: plasmoid.configuration.aspectY
+
+            onValueChanged: {
+                plasmoid.configuration.aspectY = value
+            }
+
+            // Layout.alignment: Qt.AlignRight
+        }
+    }
+    
+
+    // Rows
+    RowLayout {
+        Layout.fillWidth: true
+        Layout.alignment: Qt.AlignTop
+
+        Layout.leftMargin: 10
+        Layout.rightMargin: 10
+
+        Controls.Label {
+            text: i18n("Number of Rows:")
+
+            Layout.alignment: Qt.AlignLeft
+        }
+
+        Controls.SpinBox {
+            from: 1
+            to: 5
+            value: plasmoid.configuration.rowCount
+
+            onValueChanged: {
+                plasmoid.configuration.rowCount = value
+            }
+
+            Layout.alignment: Qt.AlignRight
+        }
+    }
+
+
+    // Columns
+    RowLayout {
+        Layout.fillWidth: true
+        Layout.alignment: Qt.AlignTop
+
+        Layout.leftMargin: 10
+        Layout.rightMargin: 10
+
+        Controls.Label {
+            text: i18n("Number of columns:")
+
+            Layout.alignment: Qt.AlignLeft
+        }
+
+        Controls.SpinBox {
+            from: 1
+            to: 5
+            value: plasmoid.configuration.colCount
+
+            onValueChanged: {
+                plasmoid.configuration.colCount = value
+            }
+
+            Layout.alignment: Qt.AlignRight
+        }
+    }
+
+
+    // Margins
+    RowLayout {
+        Layout.fillWidth: true
+        Layout.alignment: Qt.AlignTop
+
+        Layout.leftMargin: 10
+        Layout.rightMargin: 10
+
+        Controls.Label {
+            text: i18n("Margins between pictures (in pt):")
+
+            Layout.alignment: Qt.AlignLeft
+        }
+
+        Controls.SpinBox {
+            from: 0
+            to: 100
+            value: plasmoid.configuration.margins
+
+            onValueChanged: {
+                plasmoid.configuration.margins = value
             }
 
             Layout.alignment: Qt.AlignRight
         }
     }
     
-
-    // Popup height
+    
+    // Margins
     RowLayout {
         Layout.fillWidth: true
         Layout.alignment: Qt.AlignTop
@@ -86,18 +184,18 @@ ColumnLayout {
         Layout.rightMargin: 10
 
         Controls.Label {
-            text: i18n("Popup height:")
+            text: i18n("Image Width")
 
             Layout.alignment: Qt.AlignLeft
         }
 
         Controls.SpinBox {
             from: 100
-            to: 2000
-            value: plasmoid.configuration.popupHeight
+            to: 1000
+            value: plasmoid.configuration.imageWidth
 
             onValueChanged: {
-                plasmoid.configuration.popupHeight = value
+                plasmoid.configuration.imageWidth = value
             }
 
             Layout.alignment: Qt.AlignRight
@@ -105,59 +203,5 @@ ColumnLayout {
     }
 
 
-    // Picture width
-    RowLayout {
-        Layout.fillWidth: true
-        Layout.alignment: Qt.AlignTop
-
-        Layout.leftMargin: 10
-        Layout.rightMargin: 10
-
-        Controls.Label {
-            text: i18n("Picture width:")
-
-            Layout.alignment: Qt.AlignLeft
-        }
-
-        Controls.SpinBox {
-            from: 20
-            to: 500
-            value: plasmoid.configuration.pictureWidth
-
-            onValueChanged: {
-                plasmoid.configuration.pictureWidth = value
-            }
-
-            Layout.alignment: Qt.AlignRight
-        }
-    }
-
-
-    // Picture height
-    RowLayout {
-        Layout.fillWidth: true
-        Layout.alignment: Qt.AlignTop
-
-        Layout.leftMargin: 10
-        Layout.rightMargin: 10
-
-        Controls.Label {
-            text: i18n("Picture height:")
-
-            Layout.alignment: Qt.AlignLeft
-        }
-
-        Controls.SpinBox {
-            from: 20
-            to: 500
-            value: plasmoid.configuration.pictureHeight
-
-            onValueChanged: {
-                plasmoid.configuration.pictureHeight = value
-            }
-
-            Layout.alignment: Qt.AlignRight
-        }
-    }
 
 }
