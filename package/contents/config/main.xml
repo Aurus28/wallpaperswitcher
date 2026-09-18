@@ -32,7 +32,7 @@
         </entry>
 
         <entry name="hideUnlessEditMode" type="Bool">
-            <default>true</default>
+            <default>false</default>
         </entry>
 
     </group>

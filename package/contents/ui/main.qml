@@ -15,6 +15,13 @@ import org.kde.plasma.core as PlasmaCore
 PlasmoidItem {
     id: widget
 
+    preferredRepresentation: compactRepresentation
+
+    Plasmoid.status: plasmoid.configuration.hideUnlessEditMode
+        ? PlasmaCore.Types.HiddenStatus
+        : PlasmaCore.Types.PassiveStatus
+
+    Plasmoid.onStatusChanged: console.log("status is now:", Plasmoid.status)
 
     Plasma5Support.DataSource {
         id: executable
@@ -51,7 +58,9 @@ PlasmoidItem {
         Layout.preferredHeight: grid.cellHeight * plasmoid.configuration.rowCount
 
 
-        Component.onCompleted: grid.forceActiveFocus()
+        Component.onCompleted: { 
+            grid.forceActiveFocus() 
+        }
 
         Connections {
             target: widget

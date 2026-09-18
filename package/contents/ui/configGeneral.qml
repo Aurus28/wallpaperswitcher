@@ -3,6 +3,7 @@ import QtQuick.Controls as Controls
 import QtQuick.Dialogs
 import QtQuick.Layouts
 import QtCore
+import org.kde.plasma.components as PlasmaComponents
 
 ColumnLayout {
     width: 300
@@ -202,6 +203,12 @@ ColumnLayout {
         }
     }
 
+    PlasmaComponents.CheckBox {
+        Layout.leftMargin: 10
 
+        text: "Hide icon unless editing"
+        checked: plasmoid.configuration.hideUnlessEditMode
+        onCheckedChanged: plasmoid.configuration.hideUnlessEditMode = checked
+    }
 
 }
