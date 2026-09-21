@@ -3,11 +3,12 @@
         "Id": "com.github.aurus28",
         "Name": "Wallpaper Switcher",
         "Description": "Minimal Plasma 6 wallpaper switcher",
-        "Icon": "preferences-desktop-wallpaper"
+        "Icon": "preferences-desktop-wallpaper",
+        "Version": "1",
+        "Website": "https://aurus28.github.com/wallpaperswitcher/"
     },
     "KPackageStructure": "Plasma/Applet",
     "X-Plasma-API-Minimum-Version": "6.0",
-    "X-Plasma-API": "declarative",
     "X-Plasma-MainScript": "ui/main.qml",
     "X-Plasma-ConfigPlugins": [
         "configGeneral"

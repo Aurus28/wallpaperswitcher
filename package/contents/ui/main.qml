@@ -21,7 +21,42 @@ PlasmoidItem {
         ? PlasmaCore.Types.HiddenStatus
         : PlasmaCore.Types.PassiveStatus
 
-    Plasmoid.onStatusChanged: console.log("status is now:", Plasmoid.status)
+    //Plasmoid.onStatusChanged: console.log("status is now:", Plasmoid.status)
+
+
+    compactRepresentation: Item {
+        id: compactWrapper
+
+        readonly property bool inEditMode:
+            plasmoid.containment && plasmoid.containment.corona
+            ? plasmoid.containment.corona.editMode : false
+
+        readonly property bool shouldShow:
+            !plasmoid.configuration.hideUnlessEditMode || inEditMode
+
+        Layout.minimumWidth: shouldShow ? Kirigami.Units.iconSizes.small : 0
+        Layout.minimumHeight: shouldShow ? Kirigami.Units.iconSizes.small : 0
+        Layout.preferredWidth: Layout.minimumWidth
+        Layout.preferredHeight: Layout.minimumHeight
+
+        Loader {
+            anchors.fill: parent
+            active: compactWrapper.shouldShow
+
+            onActiveChanged: {
+                Plasmoid.backgroundHints = compactWrapper.shouldShow ? PlasmaCore.Types.DefaultBackground : PlasmaCore.Types.NoBackground
+                //console.log("Changed Background Hints!")
+            }
+
+            sourceComponent: Kirigami.Icon {
+                source: Plasmoid.icon
+                MouseArea {
+                    anchors.fill: parent
+                    onClicked: widget.expanded = !widget.expanded
+                }
+            }
+        }
+    }
 
     Plasma5Support.DataSource {
         id: executable
@@ -34,8 +69,9 @@ PlasmoidItem {
 
     function applyWallpaper(url) {
         if (!url) return
-        let path = url.toString().replace(/^file:\/\//, "")
-        executable.connectSource("plasma-apply-wallpaperimage '" + path + "'")
+        let path = decodeURIComponent(url.toString().replace(/^file:\/\//, ""))
+        let escaped = path.replace(/'/g, "'\\''")
+        executable.connectSource("plasma-apply-wallpaperimage '" + escaped + "'")
         widget.expanded = false
     }
 
