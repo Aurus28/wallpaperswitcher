@@ -1,8 +1,6 @@
 TODO:
-- no setting width and height: set aspect ratio, number of images per row and column and margin done
-- keyboard navigation done
-- escape spaces ' ' in the plasma-apply-wallpaperimage call
-- make the ui nicer (borders, etc) done
-- add random option
-- add option to hide the widget (icon)
-- improve loading times 
+- [ ] add random option
+- [ ] add option for horizontal scrolling
+- [ ] more options in settings (margins, border radius & width, maybe colors)
+- [ ] write a better readme
+- [ ] test and add option to load images at shell start
