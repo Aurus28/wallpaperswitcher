@@ -7,6 +7,7 @@ import Qt.labs.folderlistmodel
 import org.kde.plasma.plasma5support as Plasma5Support
 import org.kde.kirigami as Kirigami
 import org.kde.plasma.core as PlasmaCore
+import QtQuick.Controls
 
 
 
@@ -116,8 +117,8 @@ PlasmoidItem {
             highlight: Item {
                 Rectangle {
                     anchors.centerIn: parent
-                    width: root.imgW + 6
-                    height: root.imgH + 6
+                    width: root.imgW + 8
+                    height: root.imgH + 8
                     radius: 10
                     color: "transparent"
                     border.width: 4
@@ -136,7 +137,7 @@ PlasmoidItem {
             Keys.onReturnPressed: widget.applyWallpaper(grid.model.get(grid.currentIndex, "fileUrl"))
             Keys.onEnterPressed:  widget.applyWallpaper(grid.model.get(grid.currentIndex, "fileUrl"))
             Keys.onEscapePressed: widget.expanded = false
-
+            
             model: FolderListModel {
                 folder: wallpaperFolder
                 nameFilters: ["*.jpg", "*.jpeg", "*.png"]
