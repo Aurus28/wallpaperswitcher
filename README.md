@@ -1,4 +1,5 @@
 **Simple KDE Plasma Wallpaper Switcher**
+
 Allows for a Popup to open out of the widget and lets you pick a wallpaper to apply.
 
 **Features:**
