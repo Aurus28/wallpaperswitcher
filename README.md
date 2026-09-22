@@ -19,7 +19,8 @@ Feel free to open an Issue in Github
 
 
 
-TODO:
+**TODO:**
+(This section is basically just my notes, but some of the listed things *might* happen in the future)
 - [ ] add random option
 - [ ] add option for horizontal scrolling
 - [ ] more options in settings (margins, border radius & width, maybe colors)
