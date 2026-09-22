@@ -7,6 +7,7 @@ Allows for a Popup to open out of the widget and lets you pick a wallpaper to ap
 - visual customisation in the settings
 - Option to hide the widget (thus you see nothing unless you press the shortcut, in which case the popup opens)
 - Option to also change the lockscreen wallpaper
+- Load available images from ~/Pictures/Wallpapers (configurable in settings)
 
 **Installation:**
 
@@ -26,7 +27,7 @@ Feel free to open an Issue in Github
 
 (This section is basically just my notes, but some of the listed things *might* happen in the future)
 - [ ] add random option
-- [ ] add option for horizontal scrolling
+- [X] add option for horizontal scrolling
 - [ ] more options in settings (margins, border radius & width, maybe colors)
 - [X] write a better readme
 - [ ] test and add option to load images at shell start

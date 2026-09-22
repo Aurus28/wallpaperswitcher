@@ -116,6 +116,8 @@ PlasmoidItem {
             cellWidth:  root.imgW + root.gap
             cellHeight: root.imgH + root.gap
 
+            flow: plasmoid.configuration.horizScrolling ? GridView.FlowTopToBottom : GridView.FlowLeftToRight
+
             highlightMoveDuration: 100
             highlight: Item {
                 Rectangle {
