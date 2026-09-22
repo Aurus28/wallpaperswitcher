@@ -221,4 +221,12 @@ ColumnLayout {
         onCheckedChanged: plasmoid.configuration.changeLockscreen = checked
     }
 
+    // horizontal scrolling
+    PlasmaComponents.CheckBox {
+        Layout.leftMargin: 10
+
+        text: "Scroll horizontally instead"
+        checked: plasmoid.configuration.horizScrolling
+        onCheckedChanged: plasmoid.configuration.horizScrolling = checked
+    }
 }
