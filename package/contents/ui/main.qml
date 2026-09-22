@@ -73,6 +73,9 @@ PlasmoidItem {
         let path = decodeURIComponent(url.toString().replace(/^file:\/\//, ""))
         let escaped = path.replace(/'/g, "'\\''")
         executable.connectSource("plasma-apply-wallpaperimage '" + escaped + "'")
+        if (plasmoid.configuration.changeLockscreen) {
+            executable.connectSource("kwriteconfig6 --file kscreenlockerrc --group Greeter --group Wallpaper --group org.kde.image --group General --key Image '" + escaped + "'");
+        }
         widget.expanded = false
     }
 

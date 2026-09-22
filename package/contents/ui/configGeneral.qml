@@ -203,12 +203,22 @@ ColumnLayout {
         }
     }
 
+    // hide widget toggle
     PlasmaComponents.CheckBox {
         Layout.leftMargin: 10
 
         text: "Hide icon unless editing"
         checked: plasmoid.configuration.hideUnlessEditMode
         onCheckedChanged: plasmoid.configuration.hideUnlessEditMode = checked
+    }
+
+    // also change lockscreen toggle
+    PlasmaComponents.CheckBox {
+        Layout.leftMargin: 10
+
+        text: "Also change lockscreen wallpaper"
+        checked: plasmoid.configuration.changeLockscreen
+        onCheckedChanged: plasmoid.configuration.changeLockscreen = checked
     }
 
 }
