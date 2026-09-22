@@ -16,6 +16,7 @@ Option 2:
 Download the `package` folder and place everything inside it into `~/.local/share/plasma/plasmoids/com.github.aurus28/`
 
 **Issues or Feature Requests:**
+
 Feel free to open an Issue in Github
 
 
