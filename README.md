@@ -22,6 +22,7 @@ Feel free to open an Issue in Github
 
 
 **TODO:**
+
 (This section is basically just my notes, but some of the listed things *might* happen in the future)
 - [ ] add random option
 - [ ] add option for horizontal scrolling
