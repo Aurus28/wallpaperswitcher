@@ -49,6 +49,26 @@ ColumnLayout {
         }
     }
 
+   RowLayout {
+        Layout.fillWidth: true
+        Layout.alignment: Qt.AlignTop
+        Layout.leftMargin: 10
+        Layout.rightMargin: 10
+        Controls.Label {
+            text: i18n("Command on wallpaper change")
+        }
+        Controls.TextField {
+            id: commandField
+            text: plasmoid.configuration.commandHook
+            Controls.ToolTip.visible: hovered
+            Controls.ToolTip.text: "Command to run whenever the wallpaper changes. Exports the environment variable WALLPAPER_PATH"
+            Layout.fillWidth: true
+            onEditingFinished: {
+                plasmoid.configuration.commandHook = text;
+            }
+        }
+    }
+
     // Aspect Ratio
     RowLayout {
         Layout.fillWidth: true

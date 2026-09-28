@@ -76,6 +76,9 @@ PlasmoidItem {
         if (plasmoid.configuration.changeLockscreen) {
             executable.connectSource("kwriteconfig6 --file kscreenlockerrc --group Greeter --group Wallpaper --group org.kde.image --group General --key Image '" + escaped + "'");
         }
+        if (plasmoid.configuration.commandHook) {
+            executable.connectSource("export WALLPAPER_PATH=" + escaped + ";" + plasmoid.configuration.commandHook);
+        }
         widget.expanded = false
     }
 

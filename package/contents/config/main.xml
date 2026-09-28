@@ -7,6 +7,9 @@
         <entry name="folderPath" type="Path">
             <default></default>
         </entry>
+        <entry name="commandHook" type="String">
+            <default></default>
+        </entry>
         <entry name="aspectX" type="Int">
             <default>16</default>
         </entry>
