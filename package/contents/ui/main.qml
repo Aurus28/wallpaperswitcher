@@ -115,6 +115,7 @@ PlasmoidItem {
             clip: true
             cellWidth:  root.imgW + root.gap
             cellHeight: root.imgH + root.gap
+            property point lastMousePosition: Qt.point(-1, -1)
 
             flow: plasmoid.configuration.horizScrolling ? GridView.FlowTopToBottom : GridView.FlowLeftToRight
 
@@ -170,6 +171,16 @@ PlasmoidItem {
                     MouseArea {
                         anchors.fill: parent
                         onClicked: widget.applyWallpaper(fileUrl)
+                        hoverEnabled: true
+                        onPositionChanged: function(mouse) {
+                            const p = mapToItem(grid, mouse.x, mouse.y)
+                            if (p.x === grid.lastMousePosition.x &&
+                                p.y === grid.lastMousePosition.y)
+                                return
+                            grid.lastMousePosition = p
+                            grid.currentIndex = index
+
+                        }
                     }
                 }
             }
